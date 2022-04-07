@@ -1,7 +1,8 @@
 # Pull base image 
-From tomcat:8-jre8
+FROM tomcat
 
-# Maintainer 
-MAINTAINER "valaxytech@gmail.com" 
-COPY ./webapp.war /usr/local/tomcat/webapps
+RUN apt-get update && apt-get -y upgrade
 
+WORKDIR /usr/local/tomcat
+
+EXPOSE 8080
