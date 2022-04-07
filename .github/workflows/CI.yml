@@ -33,7 +33,7 @@ jobs:
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         
     - name: Build the Docker Image
-      run: docker build . --file Dockerfile --tag prachi-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag sharmaprachi/prachi-image
       
     - name: Docker Push
-      run: docker push ${{ secrets.DOCKER_USERNAME }}/sharmaprachi/git:latest
+      run: docker push sharmaprachi/prachi-image
