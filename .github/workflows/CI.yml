@@ -33,7 +33,7 @@ jobs:
     - name: Clone Repository
       uses: actions/checkout@master
     - name: Build and Test
-      run: org.sonarsource.scanner.maven:sonar    
+      run: mvn -B package --file pom.xml   
         
     - name: Analyze with SonarCloud
       uses: sonarsource/sonarcloud-github-action@master
